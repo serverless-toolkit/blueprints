@@ -8,7 +8,8 @@
     "deploy": "STACKID=blueprints-lambda-url cdk deploy --app cdk.out --tags blueprintName=lambda-url --tags deployer=serverless-toolkit",
     "destroy": "STACKID=blueprints-lambda-url cdk destroy --app cdk.out --force",
     "zip": "zip -r lambda-url.zip cdk.out",
-    "clear": "rimraf lambda-url.zip cdk.out"
+    "clear": "rimraf lambda-url.zip cdk.out",
+    "copy": "aws s3 cp lambda-url.zip s3://s3-content-s3bucket64cb25af-18yklghjrwtjk"
   },
   "devDependencies": {
     "rimraf": "3.0.2",

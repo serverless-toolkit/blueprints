@@ -43,3 +43,6 @@ jobs:
       - name: Templates zip
         run: |
           npm run zip
+      - name: Copy zip
+        run: |
+          npm run copy          

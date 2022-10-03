@@ -8,7 +8,8 @@
     "deploy": "STACKID=blueprints-s3-website cdk deploy --app cdk.out --tags blueprintName=s3-website --tags deployer=serverless-toolkit",
     "destroy": "STACKID=blueprints-s3-website cdk destroy --app cdk.out --force",
     "zip": "zip -r s3-website.zip cdk.out",
-    "clear": "rimraf s3-website.zip cdk.out"
+    "clear": "rimraf s3-website.zip cdk.out",
+    "copy": "aws s3 cp s3-website.zip s3://s3-content-s3bucket64cb25af-18yklghjrwtjk"
   },
   "devDependencies": {
     "rimraf": "3.0.2",
