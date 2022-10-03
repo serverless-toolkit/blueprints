@@ -6,7 +6,8 @@
   "scripts": {
     "synth": "STACKID=blueprints-lambda-url cdk synth --quiet",
     "deploy": "STACKID=blueprints-lambda-url cdk deploy --app cdk.out --tags blueprintName=lambda-url --tags deployer=serverless-toolkit",
-    "destroy": "STACKID=blueprints-lambda-url cdk destroy --app cdk.out --force"
+    "destroy": "STACKID=blueprints-lambda-url cdk destroy --app cdk.out --force",
+    "zip": "zip -r lambda-url.zip cdk.out"
   },
   "devDependencies": {
     "@types/node": "16.11.63",

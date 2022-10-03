@@ -2,5 +2,8 @@
 .vscode
 node_modules
 .idea
+
+
 templates/**/package-lock.json
-cdk.out
+templates/**/cdk.out
+templates/**/*.zip

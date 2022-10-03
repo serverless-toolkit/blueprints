@@ -1,0 +1,42 @@
+name: STK-cloud-Deployment
+
+on:
+  push:
+    branches: [main]
+
+env:
+  AWS_REGION: "eu-central-1"
+  AWS_ACCOUNT: "044086961882"
+
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+      - name: NPM install
+        run: |
+          npm install
+      - name: AWS configure credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT }}:role/GitHubActionRole
+          role-session-name: stk-cloud-deployment
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Lerna
+        run: |
+          npm run lerna
+      - name: Synth
+        run: |
+          npm run synth
+      - name: Zip
+        run: |
+          npm run zip
