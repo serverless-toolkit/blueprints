@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "@serverless-toolkit/s3-website",
+  "version": "0.0.1",
+  "description": "Static HTML website hosted in S3",
+  "scripts": {
+    "synth": "STACKID=blueprints-s3-website cdk synth --quiet",
+    "deploy": "STACKID=blueprints-s3-website cdk deploy --app cdk.out --tags blueprintName=s3-website --tags deployer=serverless-toolkit",
+    "destroy": "STACKID=blueprints-s3-website cdk destroy --app cdk.out --force"
+  },
+  "devDependencies": {
+    "constructs": "10.1.120",
+    "@types/node": "18.8.0",
+    "aws-cdk": "2.44.0",
+    "aws-cdk-lib": "2.44.0"
+  }
+}

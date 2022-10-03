@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "@serverless-toolkit/lambda-url",
+  "version": "0.0.1",
+  "description": "Lambda with URL",
+  "scripts": {
+    "synth": "STACKID=blueprints-lambda-url cdk synth --quiet",
+    "deploy": "STACKID=blueprints-lambda-url cdk deploy --app cdk.out --tags blueprintName=lambda-url --tags deployer=serverless-toolkit",
+    "destroy": "STACKID=blueprints-lambda-url cdk destroy --app cdk.out --force"
+  },
+  "devDependencies": {
+    "@types/node": "16.11.63",
+    "@types/aws-lambda": "8.10.106",
+    "aws-cdk": "2.44.0",
+    "aws-cdk-lib": "2.44.0",
+    "aws-lambda": "1.0.7"
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "s3-website",
+    "title": "Static S3 website",
+    "description": "Static HTML website hosted in S3",
+    "image": ""
+  },
+  {
+    "name": "lambda-url",
+    "title": "Simple Lambda URL",
+    "description": "Lambda with URL",
+    "image": ""
+  }
+]
