@@ -7,9 +7,11 @@
     "synth": "STACKID=blueprints-lambda-url cdk synth --quiet",
     "deploy": "STACKID=blueprints-lambda-url cdk deploy --app cdk.out --tags blueprintName=lambda-url --tags deployer=serverless-toolkit",
     "destroy": "STACKID=blueprints-lambda-url cdk destroy --app cdk.out --force",
-    "zip": "zip -r lambda-url.zip cdk.out"
+    "zip": "zip -r lambda-url.zip cdk.out",
+    "clear": "rimraf lambda-url.zip cdk.out"
   },
   "devDependencies": {
+    "rimraf": "3.0.2",
     "@types/node": "16.11.63",
     "@types/aws-lambda": "8.10.106",
     "aws-cdk": "2.44.0",

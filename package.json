@@ -2,9 +2,11 @@
   "name": "@serverkess-toolkit/blueprints",
   "version": "0.0.1",
   "scripts": {
-    "lerna": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean --yes",
     "synth": "lerna run synth --stream --parallel",
-    "zip": "lerna run zip --stream --parallel"
+    "zip": "lerna run zip --stream --parallel",
+    "clear": "lerna run clear --stream --parallel"
   },
   "devDependencies": {
     "lerna": "5.5.4"

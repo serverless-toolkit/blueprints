@@ -31,12 +31,15 @@ jobs:
           role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT }}:role/GitHubActionRole
           role-session-name: stk-cloud-deployment
           aws-region: ${{ env.AWS_REGION }}
-      - name: Lerna
+      - name: Lerna bootstrap
         run: |
-          npm run lerna
-      - name: Synth
+          npm run bootstrap
+      - name: Templates clear
+        run: |
+          npm run clear          
+      - name: Templates synth
         run: |
           npm run synth
-      - name: Zip
+      - name: Templates zip
         run: |
           npm run zip
