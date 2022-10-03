@@ -37,4 +37,5 @@ class S3Stack extends Stack {
 }
 
 const app = new App();
-new S3Stack(app, 's3-website-stack');
+const stackname = app.node.tryGetContext("stackname");
+new S3Stack(app, "s3-website-stack", { stackName: stackname });
