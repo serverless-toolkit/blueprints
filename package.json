@@ -4,10 +4,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
-    "synth": "lerna run synth --stream --parallel",
-    "zip": "lerna run zip --stream --parallel",
-    "clear": "lerna run clear --stream --parallel",
-    "copy": "lerna run copy --stream --parallel"
+    "clear": "lerna run clear --stream --parallel"
   },
   "devDependencies": {
     "lerna": "5.5.4"

@@ -6,8 +6,10 @@ import {
   Duration,
   aws_lambda,
   StackProps,
+  CfnParameter,
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
+import { join } from "path";
 
 class LambdaUrlStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -41,4 +43,5 @@ class LambdaUrlStack extends Stack {
 }
 
 const app = new App();
-new LambdaUrlStack(app, `stk-stack-${process.env.STACKID}`);
+const stackname = app.node.tryGetContext("stackname");
+new LambdaUrlStack(app, "lambda-url-stack", { stackName: stackname });

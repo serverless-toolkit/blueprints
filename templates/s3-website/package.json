@@ -4,14 +4,12 @@
   "version": "0.0.1",
   "description": "Static HTML website hosted in S3",
   "scripts": {
-    "synth": "STACKID=blueprints-s3-website cdk synth --quiet",
-    "deploy": "STACKID=blueprints-s3-website cdk deploy --app cdk.out --tags blueprintName=s3-website --tags deployer=serverless-toolkit",
-    "destroy": "STACKID=blueprints-s3-website cdk destroy --app cdk.out --force",
-    "zip": "zip -r s3-website.zip cdk.out",
-    "clear": "rimraf s3-website.zip cdk.out",
-    "copy": "aws s3 cp s3-website.zip s3://s3-content-s3bucket64cb25af-18yklghjrwtjk"
+    "deploy": "cdk deploy --context stackname=s3-website-example",
+    "destroy": "cdk destroy --context stackname=s3-website-example --force",
+    "clear": "rimraf cdk.out"
   },
   "devDependencies": {
+    "ts-node": "10.9.1",
     "rimraf": "3.0.2",
     "constructs": "10.1.120",
     "@types/node": "18.8.0",
